@@ -1,9 +1,9 @@
 Set-StrictMode -Off
 
-configuration Role-DHCP {
+configuration dhcp {
     node localhost {
     }
 }
 
-Role-DHCP -output "."
-Start-DscConfiguration -Path .\Role-DHCP -ComputerName localhost -Wait -Force -Verbose
+dhcp -output "."
+Start-DscConfiguration -Path .\dhcp -ComputerName localhost -Wait -Force -Verbose

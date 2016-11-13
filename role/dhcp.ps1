@@ -1,4 +1,5 @@
 Set-StrictMode -Off
+Install-Module -Name xDhcpServer
 
 configuration dhcp {
 
@@ -7,11 +8,6 @@ configuration dhcp {
     Import-Dscresource -ModuleName xDhcpServerOption
 
     node localhost {
-
-        PSModuleResource xDhcpServer{
-            Module_name = "xDhcpServer"
-            Ensure = "Present"
-        }
 
         WindowsFeature DHCP{
             Name = "DHCP"

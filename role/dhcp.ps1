@@ -2,6 +2,9 @@ Set-StrictMode -Off
 
 configuration dhcp {
     node localhost {
+        WindowsFeature RoleDHCP{
+            Ensure = "Present"
+        }
     }
 }
 

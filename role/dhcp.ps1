@@ -26,7 +26,7 @@ configuration dhcp {
             IPStartRange = '10.20.30.5'
             Name = 'PowerShellScope'
             SubnetMask = '255.255.255.0'
-            LeaseDuration = '00:08:00'
+            LeaseDuration = '08.00:00:00'
             State = 'Active'
             AddressFamily = 'IPv4'
         }

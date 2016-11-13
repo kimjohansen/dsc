@@ -3,6 +3,7 @@ Install-Module -Name xDhcpServer
 
 configuration dhcp {
 
+    Install-Module -Name xDhcpServer
     Import-Dscresource -ModuleName PowerShellModule
     Import-Dscresource -ModuleName xDhcpServerScope
     Import-Dscresource -ModuleName xDhcpServerOption

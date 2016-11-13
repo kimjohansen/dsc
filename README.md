@@ -3,7 +3,7 @@
 ## Prerequirements
 
 * https://www.microsoft.com/en-us/download/details.aspx?id=50395
-
+* Install-Module -Name PowerShellModule
 
 ## Usage
 

@@ -11,6 +11,12 @@ configuration dhcp {
             Ensure = "Present"
             IncludeAllSubFeature = $true
         }
+        WindowsFeature DHCPTools
+            DependsOn = '[WindowsFeature]DHCP'
+            Ensure = "Present"
+            Name = 'RSAT-DHCP'
+            IncludeAllSubFeature = $true
+    }
 
         xDhcpServerScope Scope{
             DependsOn = '[WindowsFeature]DHCP'

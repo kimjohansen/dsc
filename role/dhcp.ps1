@@ -9,6 +9,7 @@ configuration dhcp {
         WindowsFeature DHCP{
             Name = "DHCP"
             Ensure = "Present"
+            IncludeAllSubFeature = $true
         }
 
         xDhcpServerScope Scope{

@@ -22,13 +22,13 @@ configuration dhcp {
         xDhcpServerScope Scope{
             DependsOn = '[WindowsFeature]DHCP'
             Ensure = 'Present'
-            IPEndRange = '10.20.30.250'
-            IPStartRange = '10.20.30.5'
-            Name = 'PowerShellScope'
-            SubnetMask = '255.255.255.0'
+            IPEndRange = $node.IPEndRange
+            IPStartRange = $node.IPStartRange
+            Name = $node.Name
+            SubnetMask = $node.SubnetMask
             LeaseDuration = $node.LeaseDuration
-            State = 'Active'
-            AddressFamily = 'IPv4'
+            State = $node.State
+            AddressFamily = $node.AddressFamily
         }
 
         xDhcpServerOption Option{

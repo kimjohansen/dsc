@@ -26,7 +26,7 @@ configuration dhcp {
             IPStartRange = '10.20.30.5'
             Name = 'PowerShellScope'
             SubnetMask = '255.255.255.0'
-            LeaseDuration = '08.00:00:00'
+            LeaseDuration = $node.LeaseDuration
             State = 'Active'
             AddressFamily = 'IPv4'
         }
@@ -41,5 +41,5 @@ configuration dhcp {
     }
 }
 
-dhcp -output "." -ConfigurationData ConfigurationData.psd1
+dhcp -output "." -ConfigurationData .\ConfigurationData.psd1
 Start-DscConfiguration -Path .\dhcp -ComputerName localhost -Wait -Force -Verbose

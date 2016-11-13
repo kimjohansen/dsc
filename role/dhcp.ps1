@@ -2,8 +2,7 @@ Set-StrictMode -Off
 
 configuration dhcp {
 
-    Import-Dscresource -ModuleName xDhcpServerScope
-    Import-Dscresource -ModuleName xDhcpServerOption
+    Import-DscResource -module xDHCpServer
 
     node localhost {
 

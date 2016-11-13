@@ -1,10 +1,20 @@
 Set-StrictMode -Off
-Install-Module -Name xDhcpServer
+
+configuration dhcp_setup {
+    Import-Dscresource -ModuleName PowerShellModule
+    node localhost {
+        PSModuleResource xDhcpServer{
+            Module_name = "xDhcpServer"
+            Ensure = "Present"
+        }
+    }
+}
+
+dhcp_setup -output "."
+Start-DscConfiguration -Path .\dhcp_setup -ComputerName localhost -Wait -Force -Verbose
 
 configuration dhcp {
 
-    Install-Module -Name xDhcpServer
-    Import-Dscresource -ModuleName PowerShellModule
     Import-Dscresource -ModuleName xDhcpServerScope
     Import-Dscresource -ModuleName xDhcpServerOption
 

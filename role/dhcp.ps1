@@ -3,6 +3,8 @@ Set-StrictMode -Off
 configuration dhcp {
 
     Import-Dscresource -ModuleName PowerShellModule
+    Import-Dscresource -ModuleName xDhcpServerScope
+    Import-Dscresource -ModuleName xDhcpServerOption
 
     node localhost {
 
@@ -15,9 +17,6 @@ configuration dhcp {
             Name = "DHCP"
             Ensure = "Present"
         }
-
-        Import-Dscresource -ModuleName xDhcpServerScope
-        Import-Dscresource -ModuleName xDhcpServerOption
 
         xDhcpServerScope Scope{
             DependsOn = '[WindowsFeature]DHCP'

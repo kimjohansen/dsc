@@ -16,6 +16,9 @@ configuration dhcp {
             Ensure = "Present"
         }
 
+        Import-Dscresource -ModuleName xDhcpServerScope
+        Import-Dscresource -ModuleName xDhcpServerOption
+
         xDhcpServerScope Scope{
             DependsOn = '[WindowsFeature]DHCP'
             Ensure = 'Present'

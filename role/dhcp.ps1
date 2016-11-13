@@ -41,5 +41,5 @@ configuration dhcp {
     }
 }
 
-dhcp -output "."
+dhcp -output "." -ConfigurationData ConfigurationData.psd1
 Start-DscConfiguration -Path .\dhcp -ComputerName localhost -Wait -Force -Verbose

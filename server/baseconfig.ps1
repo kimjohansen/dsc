@@ -7,7 +7,7 @@ configuration BaseConfig
         {
             Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager'
             ValueName   = 'DoNotOpenServerManagerAtLogon'
-            Force       =  True
+            Force       =  $true
             ValueData   = '1'
             ValueType   = 'Dword'
         }

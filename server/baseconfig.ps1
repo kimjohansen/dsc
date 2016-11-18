@@ -1,7 +1,17 @@
-Set-StrictMode -Off
+configuration BaseConfig 
+{
+    node localhost
+    {
+        # Disable autostart of ServerManager on login
+        Registry ServerManager
+        {
+            Key         = 'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\ServerManager'
+            ValueName   = 'DoNotOpenServerManagerAtLogon'
+            Force       = $true
+            ValueData   = '0x1'
+            ValueType   = 'Dword'
+        }
 
-configuration BaseConfig {
-    node localhost {
         Registry DisableIPv6 {
             Force = "True"
             Ensure = "Present"

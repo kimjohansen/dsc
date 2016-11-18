@@ -3,12 +3,11 @@ Set-StrictMode -Off
 configuration ad {
 
     Import-DscResource -module xActiveDirectory
-
     node localhost {
 
-        WindowsFeature ActiveDirectory{
-            Name = "AD"
-            Ensure = "Present"
+        WindowsFeature ADDSInstall{
+            Name = "AD-Domain-Services"
+            Ensure = "present"
             IncludeAllSubFeature = $true
         }
 

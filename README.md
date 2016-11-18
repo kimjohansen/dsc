@@ -13,5 +13,6 @@ iwr https://raw.githubusercontent.com/kimjohansen/dsc/master/server/baseconfig.p
 
 Role:
 
-iwr https://raw.githubusercontent.com/kimjohansen/dsc/master/role/dhcp.ps1 -UseBasicParsing | iex
+iwr https://raw.githubusercontent.com/kimjohansen/dsc/master/role/dhcp/dhcp.ps1 -UseBasicParsing | iex
+iwr https://raw.githubusercontent.com/kimjohansen/dsc/master/role/ad/ad.ps1 -UseBasicParsing | iex
 

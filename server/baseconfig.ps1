@@ -14,13 +14,13 @@ configuration BaseConfig
         }
 
         ## Network Configuration
-        #Disable IPv6
+        #Disable IPv6 on nontunnel interfaces (except the loopback) and on IPv6 tunnel interface
         Registry IPv6
         {
             Key         = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP6\Parameters'
             ValueName   = 'DisabledComponents'
             Force       = $true
-            ValueData   = 'ff' 
+            ValueData   = '255' 
             ValueType   = 'Dword'
         }
     }

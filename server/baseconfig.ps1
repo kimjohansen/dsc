@@ -2,8 +2,8 @@ configuration BaseConfig
 {
 
     # Importing required modules
-    Import-DSCResource -Module MSFT_xSystemSecurity -Name xUac
-    Import-DSCResource -Module MSFT_xSystemSecurity -Name xIEEsc
+    Import-DSCResource -Module xSystemSecurity -Name xUac
+    Import-DSCResource -Module xSystemSecurity -Name xIEEsc
 
     node localhost
     {

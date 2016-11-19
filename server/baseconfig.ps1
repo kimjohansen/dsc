@@ -4,6 +4,7 @@ configuration BaseConfig
     # Importing required modules
     Import-DSCResource -Module xSystemSecurity -Name xUac
     Import-DSCResource -Module xSystemSecurity -Name xIEEsc
+    Import-DscResource -ModuleName GraniResource
 
     node localhost
     {

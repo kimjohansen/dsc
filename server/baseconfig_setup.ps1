@@ -9,11 +9,20 @@ configuration baseconfig_setup
         # Install xSystemSecurity module
         PSModuleResource xSystemSecurity
         {
-            Module_name = "xSystemSecurity"
-            Ensure = "Present"
+            Module_name = 'xSystemSecurity'
+            Ensure      = 'Present'
+        }
+
+        # Install GraniResource module
+        PSModuleResource GraniResource
+        {
+            Module_name = 'GraniResource'
+            Ensure      = 'Present'
         }
     }
 }
 
-baseconfig_setup -output "."
+GraniResource
+
+baseconfig_setup -output '.'
 Start-DscConfiguration -Path .\baseconfig_setup -ComputerName localhost -Wait -Force -Verbose

@@ -2,6 +2,7 @@ configuration BaseConfig
 {
 
     # Importing required modules
+    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
     Import-DSCResource -Module xSystemSecurity -Name xUac
     Import-DSCResource -Module xSystemSecurity -Name xIEEsc
 

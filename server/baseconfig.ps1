@@ -1,7 +1,13 @@
 configuration BaseConfig 
 {
+
+    # Importing required modules
+    Import-DSCResource -Module MSFT_xSystemSecurity -Name xUac
+    Import-DSCResource -Module MSFT_xSystemSecurity -Name xIEEsc
+
     node localhost
     {
+        ## Cosmetic preferences
 
         # Disable autostart of ServerManager on login
         Registry ServerManager
@@ -14,7 +20,8 @@ configuration BaseConfig
         }
 
         ## Network Configuration
-        #Disable IPv6 on nontunnel interfaces (except the loopback) and on IPv6 tunnel interface
+
+        # Disable IPv6 on nontunnel interfaces (except the loopback) and on IPv6 tunnel interface
         Registry IPv6
         {
             Key         = 'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TCPIP6\Parameters'
@@ -22,6 +29,21 @@ configuration BaseConfig
             Force       = $true
             ValueData   = '255' 
             ValueType   = 'Dword'
+        }
+
+        ## Security settings
+
+        # Disable User Account Control
+        xUAC UAC
+        {
+            Setting = "NeverNotifyAndDisableAll"
+        }
+
+        # Disable IE Enhanced Security Configuration for Administrator
+        xIEEsc IEEsc
+        {
+            IsEnabled = $true
+            UserRole = "Administrator"
         }
     }
 }

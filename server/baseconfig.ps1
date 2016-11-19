@@ -43,7 +43,7 @@ configuration BaseConfig
         xIEEsc IEEsc
         {
             IsEnabled = $false
-            UserRole = 'Administrator'
+            UserRole = 'Administrators'
         }
     }
 }

@@ -36,14 +36,14 @@ configuration BaseConfig
         # Disable User Account Control
         xUAC UAC
         {
-            Setting = "NeverNotifyAndDisableAll"
+            Setting = 'NeverNotifyAndDisableAll'
         }
 
         # Disable IE Enhanced Security Configuration for Administrator
         xIEEsc IEEsc
         {
-            IsEnabled = $true
-            UserRole = "Administrator"
+            IsEnabled = $false
+            UserRole = 'Administrator'
         }
     }
 }

@@ -9,3 +9,7 @@ configuration LCMConfig
         }
     }
 }
+
+LCMConfig -output '.'
+
+Set-DscLocalConfigurationManager -Path .\LCMConfig -ComputerName localhost -Confirm

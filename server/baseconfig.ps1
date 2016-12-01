@@ -270,4 +270,4 @@ configuration BaseConfig
 }
 
 BaseConfig -output "."
-Start-DscConfiguration -Path .\BaseConfig -ComputerName localhost -Wait -Force
+Start-DscConfiguration -Path .\BaseConfig -ComputerName localhost -Wait -Force -Verbose
